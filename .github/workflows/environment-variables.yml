@@ -10,12 +10,3 @@ jobs:
       - uses: actions/checkout@v4
 with:
 ref: ${{ env.BRANCH }}
-
-name: Intermediate environment variables
-on: push
-jobs:
-  print:
-    runs-on: ubuntu-latest
-    env:
-ACTOR: ${{ github.actor }}
-- run: echo "${ACTOR}"
