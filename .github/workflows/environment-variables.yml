@@ -1,12 +1,9 @@
 name: Environment variables
 on: push
 jobs:
-  run:
+  print:
     runs-on: ubuntu-latest
     env:
-      BRANCH: main
+      ACTOR: ${{ github.acrot }}
     steps:
-      - run: echo "${BRANCH}"
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ env.BRANCH }}
+      - run: echo "${ACTOR}"
